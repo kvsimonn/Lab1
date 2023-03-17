@@ -13,7 +13,7 @@ def parse():
     for data in block:
         movie=data.find('td', class_='titleColumn')
         rating=data.find('td', class_='ratingColumn imdbRating')
-        if movie is not None or rating is not None:
+        if movie is not None and rating is not None:
             mov = " ".join(movie.text.replace('\n', '').split())
             rat = rating.text.replace('\n', '')
             map[mov] = rat
